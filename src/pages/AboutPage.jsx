@@ -35,14 +35,16 @@ const AboutPage = () => {
             </p>
 
             {/* Buttons & Socials */}
-            <div className="flex flex-wrap justify-center md:justify-start items-center gap-4 sm:gap-6 mt-6">
+            {/* Buttons & Socials */}
+            <div className="flex flex-col sm:flex-col md:flex-row justify-center md:justify-start items-center gap-4 sm:gap-6 mt-6">
               {/* Download Resume */}
               <a
                 href="https://drive.google.com/file/d/your-resume-id/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="w-full sm:w-auto flex justify-center md:justify-start"
               >
-                <button className="flex items-center bg-[#D3E97A] text-black text-xs sm:text-sm md:text-base px-4 sm:px-6 py-2 sm:py-3 font-semibold rounded-full hover:bg-lime-500 transition duration-300">
+                <button className="flex items-center bg-[#D3E97A] text-black text-xs sm:text-sm md:text-base px-5 sm:px-6 py-2 sm:py-3 font-semibold rounded-full hover:bg-lime-500 transition duration-300">
                   DOWNLOAD RESUME
                   <img
                     src={dotVec}
@@ -52,38 +54,41 @@ const AboutPage = () => {
                 </button>
               </a>
 
-              {/* LinkedIn */}
-              <a
-                href="https://linkedin.com/in"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="relative bg-gray-800 p-2 sm:p-3 md:p-4 rounded-full hover:bg-gray-700 transition flex items-center justify-center transform hover:scale-110"
-              >
-                <img
-                  src={linkedinIcon}
-                  alt="LinkedIn"
-                  className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6"
-                />
-                <img
-                  src={dotVector}
-                  alt="Dot"
-                  className="absolute w-[5px] h-[5px] sm:w-[6px] sm:h-[6px] top-1 left-2 sm:top-1.5 sm:left-3"
-                />
-              </a>
+              {/* Social Icons */}
+              <div className="flex justify-center md:justify-start gap-4 sm:gap-6 mt-3 sm:mt-4 md:mt-0">
+                {/* LinkedIn */}
+                <a
+                  href="https://linkedin.com/in"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="relative bg-gray-800 p-2 sm:p-3 md:p-4 rounded-full hover:bg-gray-700 transition flex items-center justify-center transform hover:scale-110"
+                >
+                  <img
+                    src={linkedinIcon}
+                    alt="LinkedIn"
+                    className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6"
+                  />
+                  <img
+                    src={dotVector}
+                    alt="Dot"
+                    className="absolute w-[5px] h-[5px] sm:w-[6px] sm:h-[6px] top-1 left-2 sm:top-1.5 sm:left-3"
+                  />
+                </a>
 
-              {/* GitHub */}
-              <a
-                href="https://github.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-gray-800 p-2 sm:p-3 md:p-4 rounded-full hover:bg-gray-700 transition flex items-center justify-center transform hover:scale-110"
-              >
-                <img
-                  src={githubIcon}
-                  alt="GitHub"
-                  className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6"
-                />
-              </a>
+                {/* GitHub */}
+                <a
+                  href="https://github.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-gray-800 p-2 sm:p-3 md:p-4 rounded-full hover:bg-gray-700 transition flex items-center justify-center transform hover:scale-110"
+                >
+                  <img
+                    src={githubIcon}
+                    alt="GitHub"
+                    className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6"
+                  />
+                </a>
+              </div>
             </div>
           </div>
         </div>
