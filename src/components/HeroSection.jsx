@@ -13,7 +13,7 @@ const HeroSection = () => {
         {/* Title */}
         <h2 className="font-['Manrope'] text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight tracking-tight">
           HI, I AM <br />
-          <span className="text-[#D3E97A]">ROBERT GARCIA.</span>
+          ROBERT GARCIA.
         </h2>
 
         {/* Subtitle */}

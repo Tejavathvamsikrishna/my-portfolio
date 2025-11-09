@@ -4,7 +4,7 @@ const AboutSection = () => {
   return (
     <section className="px-5 sm:px-8 md:px-20 lg:px-32 py-14 md:py-24 bg-black text-white flex flex-col md:flex-row items-start md:items-center justify-between gap-8 md:gap-16">
       {/* ===== Left Side - Heading ===== */}
-      <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight w-full md:w-1/3 text-center md:text-left">
+      <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-extrabold leading-tight w-full md:w-1/3 text-center md:text-left">
         ABOUT ME
       </h2>
 
