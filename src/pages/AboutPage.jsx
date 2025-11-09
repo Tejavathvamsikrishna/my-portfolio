@@ -16,7 +16,7 @@ const AboutPage = () => {
       <section className="px-5 sm:px-8 md:px-20 lg:px-32 py-14 md:py-24 bg-black text-white min-h-screen">
         {/* Top Section */}
         <div className="flex flex-col md:flex-row justify-between items-start gap-10 md:gap-16 mb-14 md:mb-20">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold md:w-1/3 leading-tight text-center md:text-left">
+          <h2 className="text-3xl sm:text-4xl md:text-4xl font-extrabold md:w-1/3 leading-tight text-center md:text-left">
             ABOUT ME
           </h2>
 
@@ -94,19 +94,22 @@ const AboutPage = () => {
         </div>
 
         {/* About Image */}
-        <div className="flex justify-center">
-          <div className="bg-[#C7C7C7] p-[2px] sm:p-2 md:p-3 rounded-2xl shadow-lg">
+        {/* ===== About Image (Full Width on Small Devices) ===== */}
+        {/* ===== Full-Width Gray Background with Full-Width Image ===== */}
+        {/* ===== About Image (Professional Desktop Layout) ===== */}
+        <div className="w-full flex justify-center mt-12">
+          <div className="bg-[#C7C7C7] w-11/12 sm:w-4/5 md:w-3/4 lg:w-2/3 rounded-2xl shadow-md flex justify-center items-center md:p-6">
             <img
               src={aboutImg}
               alt="About"
-              className="rounded-2xl w-[200px] sm:w-[300px] md:w-[420px] lg:w-[450px] h-auto object-cover"
+              className="w-full h-auto max-h-[500px] object-contain rounded-xl"
             />
           </div>
         </div>
 
         {/* Capabilities Section */}
         <div className="flex flex-col md:flex-row justify-between items-start gap-10 md:gap-16 mt-14 md:mt-20">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold md:w-1/3 text-center md:text-left">
+          <h2 className="text-2xl sm:text-3xl md:text-3xl font-extrabold md:w-1/3 text-center md:text-left">
             MY CAPABILITIES
           </h2>
 
@@ -144,7 +147,7 @@ const AboutPage = () => {
       {/* ===== EXPERIENCE SECTION ===== */}
       <section className="px-5 sm:px-8 md:px-20 lg:px-32 pt-14 pb-10 bg-black text-white">
         <div className="flex flex-col md:flex-row justify-between items-start gap-10 md:gap-16">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold md:w-1/3 text-center md:text-left">
+          <h2 className="text-2xl sm:text-3xl md:text-3xl font-extrabold md:w-1/3 text-center md:text-left">
             MY EXPERIENCE
           </h2>
 
