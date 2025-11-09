@@ -33,7 +33,6 @@ const ProjectsSection = () => {
         { label: "Year", value: "2022" },
         { label: "Role", value: "Front-end Developer" },
       ],
-
       links: {
         demo: "https://world-news-react.netlify.app/",
       },
@@ -58,27 +57,29 @@ const ProjectsSection = () => {
   ];
 
   return (
-    <section className="px-12 md:px-24 py-24 bg-black text-white">
-      <div className="mb-12 text-left">
-        <h2 className="text-4xl md:text-4xl font-extrabold mb-3">
+    <section className="px-5 sm:px-8 md:px-20 lg:px-24 py-16 md:py-24 bg-black text-white">
+      {/* ===== Header Section ===== */}
+      <div className="mb-10 md:mb-14 text-center md:text-left">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-3">
           FEATURED PROJECTS
         </h2>
-        <p className="text-gray-400 max-w-xl">
+        <p className="text-gray-400 text-sm sm:text-base max-w-2xl mx-auto md:mx-0 leading-relaxed">
           Here are some of the selected projects that showcase my passion for
-          <br />
-          front-end development.
+          front-end development and interactive UI design.
         </p>
       </div>
 
-      <div className="flex flex-col gap-24">
+      {/* ===== Projects List ===== */}
+      <div className="flex flex-col gap-16 md:gap-24">
         {projects.map((project, index) => (
           <div
             key={index}
-            className="flex flex-col md:flex-row gap-10 md:gap-16 items-start text-left"
+            className="flex flex-col md:flex-row gap-8 md:gap-16 items-start text-left"
           >
-            <div className="md:w-1/2 bg-[#1A1A1A] p-10 rounded-2xl shadow-lg">
+            {/* ===== Left: Project Image ===== */}
+            <div className="md:w-1/2 bg-[#1A1A1A] p-4 sm:p-6 md:p-8 rounded-2xl shadow-lg">
               {project.tag && (
-                <div className="text-sm bg-gray-800 text-white px-3 py-3 rounded-full inline-block mb-4">
+                <div className="text-xs sm:text-sm bg-gray-800 text-white px-3 py-1.5 rounded-full inline-block mb-3">
                   {project.tag}
                 </div>
               )}
@@ -86,47 +87,48 @@ const ProjectsSection = () => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className={`rounded-xl w-full h-60 object-cover ${project.imageClass}`}
+                  className={`rounded-xl w-full h-44 sm:h-56 md:h-64 object-cover ${project.imageClass}`}
                 />
               </div>
             </div>
 
+            {/* ===== Right: Project Info ===== */}
             <div className="md:w-1/2">
-              <h3 className="text-2xl md:text-2xl font-bold mb-4">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4">
                 {project.title}
               </h3>
-              <p className="text-gray-400 mb-6 leading-relaxed">
+              <p className="text-gray-400 text-sm sm:text-base mb-5 leading-relaxed">
                 {project.description}
               </p>
 
-              <div className="mb-2">
-                <h4 className="text-lg font-semibold text-gray-200 mb-2">
+              <div className="mb-3">
+                <h4 className="text-base sm:text-lg font-semibold text-gray-200 mb-2">
                   Project Info
                 </h4>
               </div>
 
-              <div className="border-t border-[#1A1A1A] mb-4">
+              <div className="border-t border-[#1A1A1A] mb-3">
                 {project.info.map((item, i) => (
                   <React.Fragment key={i}>
-                    <div className="flex justify-between text-sm py-2">
+                    <div className="flex justify-between text-xs sm:text-sm py-2">
                       <span className="text-white">{item.label}</span>
-                      <span className="text-gray-200">{item.value}</span>
+                      <span className="text-gray-300">{item.value}</span>
                     </div>
                     {i !== project.info.length - 1 && (
                       <div className="border-t border-gray-700" />
                     )}
                   </React.Fragment>
                 ))}
-                <hr className="border-gray-700 mt-2" />
               </div>
 
-              <div className="flex gap-6 mt-2">
+              {/* ===== Links ===== */}
+              <div className="flex flex-wrap gap-4 sm:gap-6 mt-4">
                 {index === 1 ? (
                   <a
                     href={project.links.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-[#D3E97A] hover:underline underline-offset-4 font-semibold text-sm transition"
+                    className="flex items-center gap-2 text-[#D3E97A] hover:text-lime-400 hover:underline underline-offset-4 font-semibold text-sm transition"
                   >
                     VIEW PROJECT
                     <img
@@ -141,7 +143,7 @@ const ProjectsSection = () => {
                       href={project.links.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-[#D3E97A] hover:underline underline-offset-4 font-semibold text-sm transition"
+                      className="flex items-center gap-2 text-[#D3E97A] hover:text-lime-400 hover:underline underline-offset-4 font-semibold text-sm transition"
                     >
                       LIVE DEMO
                       <img
@@ -154,7 +156,7 @@ const ProjectsSection = () => {
                       href={project.links.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-[#D3E97A] hover:underline underline-offset-4 font-semibold text-sm transition"
+                      className="flex items-center gap-2 text-[#D3E97A] hover:text-lime-400 hover:underline underline-offset-4 font-semibold text-sm transition"
                     >
                       SEE ON GITHUB
                       <img src={githubIcon} alt="GitHub" className="w-4 h-4" />

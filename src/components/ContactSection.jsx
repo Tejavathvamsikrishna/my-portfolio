@@ -68,14 +68,15 @@ const ContactSection = () => {
   return (
     <section
       id="contact"
-      className="relative px-12 md:px-24 py-24 bg-black text-white flex flex-col md:flex-row justify-between gap-16"
+      className="relative flex flex-col md:flex-row justify-between gap-10 md:gap-16 px-5 sm:px-8 md:px-20 lg:px-32 py-14 md:py-24 bg-black text-white overflow-hidden"
     >
-      <div className="md:w-1/2 space-y-6 text-justify">
-        <h2 className="text-5xl md:text-5xl font-extrabold leading-tight text-left">
+      {/* ===== Left Side ===== */}
+      <div className="w-full md:w-1/2 space-y-5 text-center md:text-left">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight">
           LET’S CONNECT
         </h2>
 
-        <p className="text-gray-400">
+        <p className="text-gray-400 text-xs sm:text-sm md:text-base">
           Say hello at{" "}
           <a
             href="mailto:robertgarcia@gmail.com"
@@ -85,30 +86,31 @@ const ContactSection = () => {
           </a>
         </p>
 
-        <p className="text-gray-400">
+        <p className="text-gray-400 text-xs sm:text-sm md:text-base">
           For more info, here’s my{" "}
           <a href="#" className="text-[#D3E97A] hover:underline">
             resume
           </a>
         </p>
 
-        <div className="flex items-center gap-6 mt-4">
+        {/* ===== Social Icons ===== */}
+        <div className="flex justify-center md:justify-start items-center gap-4 sm:gap-6 mt-6">
           <a
             href="https://www.linkedin.com/in"
             target="_blank"
             rel="noopener noreferrer"
-            className="relative hover:opacity-80 transition inline-block"
+            className="relative hover:opacity-80 transition inline-block transform hover:scale-110"
           >
-            <img src={linkedinIcon} alt="LinkedIn" className="w-5 h-5" />
-
+            <img
+              src={linkedinIcon}
+              alt="LinkedIn"
+              className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6"
+            />
             <img
               src={dotVector}
               alt="Dot"
-              className="absolute w-[5px] h-[5px]"
-              style={{
-                top: "-6px",
-                left: "1px",
-              }}
+              className="absolute w-[4px] h-[4px] sm:w-[5px] sm:h-[5px]"
+              style={{ top: "-6px", left: "1px" }}
             />
           </a>
 
@@ -116,89 +118,90 @@ const ContactSection = () => {
             href="https://github.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:opacity-80 transition inline-block"
+            className="hover:opacity-80 transition inline-block transform hover:scale-110"
           >
-            <img src={githubIcon} alt="GitHub" className="w-6 h-6" />
+            <img
+              src={githubIcon}
+              alt="GitHub"
+              className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6"
+            />
           </a>
 
           <a
             href="https://twitter.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:opacity-80 transition inline-block"
+            className="hover:opacity-80 transition inline-block transform hover:scale-110"
           >
-            <img src={xIcon} alt="X" className="w-6 h-6" />
+            <img
+              src={xIcon}
+              alt="X"
+              className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6"
+            />
           </a>
 
           <a
             href="https://www.instagram.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:opacity-80 transition inline-block"
+            className="hover:opacity-80 transition inline-block transform hover:scale-110"
           >
-            <img src={instagramIcon} alt="Instagram" className="w-6 h-6" />
+            <img
+              src={instagramIcon}
+              alt="Instagram"
+              className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6"
+            />
           </a>
         </div>
       </div>
 
-      <form onSubmit={handleSubmit} className="md:w-1/2 space-y-6 text-justify">
-        <div>
-          <label className="block text-gray-300 text-sm mb-2">Name</label>
-          <input
-            type="text"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            placeholder="John Doe"
-            className="w-full bg-gray-900 text-gray-200 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D3E97A]"
-          />
-        </div>
-
-        <div>
-          <label className="block text-gray-300 text-sm mb-2">Email</label>
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            placeholder=""
-            className="w-full bg-gray-900 text-gray-200 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D3E97A]"
-          />
-        </div>
-
-        <div>
-          <label className="block text-gray-300 text-sm mb-2">Subject</label>
-          <input
-            type="text"
-            name="subject"
-            value={formData.subject}
-            onChange={handleChange}
-            placeholder=""
-            className="w-full bg-gray-900 text-gray-200 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D3E97A]"
-          />
-        </div>
-
-        <div>
-          <label className="block text-gray-300 text-sm mb-2">Message</label>
-          <textarea
-            name="message"
-            rows="4"
-            value={formData.message}
-            onChange={handleChange}
-            placeholder=""
-            className="w-full bg-gray-900 text-gray-200 p-3 rounded-md focus:outline-none focus:ring-2 focus:ring-[#D3E97A]"
-          ></textarea>
-        </div>
+      {/* ===== Right Side (Form) ===== */}
+      <form
+        onSubmit={handleSubmit}
+        className="w-full md:w-1/2 space-y-5 sm:space-y-6 text-center md:text-left"
+      >
+        {["name", "email", "subject", "message"].map((field, i) => (
+          <div key={i}>
+            <label
+              className="block text-gray-300 text-xs sm:text-sm mb-2 text-left"
+              htmlFor={field}
+            >
+              {field.charAt(0).toUpperCase() + field.slice(1)}
+            </label>
+            {field !== "message" ? (
+              <input
+                type={field === "email" ? "email" : "text"}
+                name={field}
+                value={formData[field]}
+                onChange={handleChange}
+                placeholder={
+                  field === "name" ? "John Doe" : field === "" ? "" : ""
+                }
+                className="w-full bg-gray-900 text-gray-200 p-2 sm:p-3 md:p-4 rounded-md text-xs sm:text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-[#D3E97A]"
+              />
+            ) : (
+              <textarea
+                name={field}
+                rows="4"
+                value={formData[field]}
+                onChange={handleChange}
+                placeholder=""
+                className="w-full bg-gray-900 text-gray-200 p-2 sm:p-3 md:p-4 rounded-md text-xs sm:text-sm md:text-base focus:outline-none focus:ring-2 focus:ring-[#D3E97A]"
+              ></textarea>
+            )}
+          </div>
+        ))}
 
         <button
           type="submit"
-          className="bg-[#D3E97A] text-black font-semibold px-8 py-3 rounded-full hover:bg-lime-500 transition"
+          className="bg-[#D3E97A] text-black font-semibold text-xs sm:text-sm md:text-base px-6 sm:px-8 py-2 sm:py-3 rounded-full hover:bg-lime-500 transition duration-300 shadow-md hover:shadow-lg"
         >
           SUBMIT
         </button>
       </form>
 
-      <p className="absolute bottom-10 left-12 text-gray-600 text-l mb-5">
+      {/* ===== Footer Text ===== */}
+      <p className="absolute bottom-5 left-5 sm:left-8 md:left-20 text-gray-600 text-[10px] sm:text-xs md:text-sm">
         © 2023 Robert Garcia
       </p>
     </section>
